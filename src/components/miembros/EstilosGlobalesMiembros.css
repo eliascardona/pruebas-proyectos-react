@@ -1,0 +1,48 @@
+.TarjetaDeMiembro__Container {
+    display: grid;
+    padding: 0 10vw;
+}
+
+.TarjetaDeMiembro__Row {
+    height: auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-self: center;
+    margin-bottom: 4rem;
+    overflow: hidden;
+}
+
+.TarjetaDeMiembro__ImgGrid {
+    width: 100%;
+    height: auto;
+    box-sizing: content-box;
+    background-color: #eee;
+}
+
+.TarjetaDeMiembro__ImgGrid > img {
+    width: 100%;
+    height: auto;
+}
+
+.justify {
+    text-align: justify;
+    padding: 0 1em 1em 1em;
+}
+
+.strongDisplay {
+    display: block;
+}
+
+@media (max-width: 668px) {
+	.TarjetaDeMiembro__Row {
+        grid-template-columns: 100%;
+        row-gap: 1em;
+        align-items: center;
+    }
+}
+
+@media (min-width:1296px) {
+    .TarjetaDeMiembro__Container {
+        padding: 0 17vw;
+    }   
+}

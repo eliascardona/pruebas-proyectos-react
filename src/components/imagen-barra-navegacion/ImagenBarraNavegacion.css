@@ -1,0 +1,82 @@
+.ImagenBarraNavegacion {
+  position: relative;
+  background-image: url("https://picsum.photos/1300/900");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 364px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  color: white;
+}
+.ImagenBarraNavegacion::before {
+  position: absolute;
+  background: rgba(33, 37, 41, 0.7);
+  content: "";
+  height: 364px;
+  top: 0;
+  width: 100%;
+}
+
+.ImagenBarraNavegacion h1,
+p,
+nav {
+  z-index: 1;
+}
+
+.ImagenBarraNavegacion h1 {
+  margin-bottom: 24px;
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.ImagenBarraNavegacion nav {
+  position: absolute;
+  width: 1160px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.ImagenBarraNavegacion__lista {
+  display: flex;
+  list-style: none;
+}
+
+.ImagenBarraNavegacion__elementos {
+  padding: 14px 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.ImagenBarraNavegacion__elementos.selected {
+  background: #094c8a;
+}
+
+@media screen and (max-width:1400px) {
+  .ImagenBarraNavegacion h1{
+    font-size: 40px;
+    text-align: center;
+  }
+ 
+}
+
+@media screen and (max-width: 1200px) {
+
+  
+
+  .ImagenBarraNavegacion nav {
+    display: none;
+  }
+
+
+}
