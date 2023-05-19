@@ -1,51 +1,38 @@
-import React from 'react'
-import { useState } from 'react'
-import ModalEvento from './ModalEvento'
+import React, { useState } from 'react'
 import './TarjetaDeEventoDos.css'
+import NormalModal from '../NormalModal'
 
-const TarjetaDeEventoDos = ({ _id, nombreDelEvento, resumenCorto, fecha, hora, modalidad, lugar, imagen, altImagen, resumenCompleto }) => {
-    const [show, setShow] = useState(false)
+const TarjetaDeEventoDos = ({ text }) => {
+    const [openNotif, setOpenNotif] = useState(false)
     return (
-        <section className='TarjetaDeEventoDos__Container'>
-            <div className='TarjetaDeEventoDos__Row'>
-                <div className='TarjetaDeEventoDos__Uno'>
-                    <h3>{nombreDelEvento}</h3>
-                </div>
-                
-                <div className='TarjetaDeEventoDos__Dos'>
-                    <div className='TarjetaDeEventoDos__ImgGrid'>
-                        <img src={imagen} alt={altImagen} />
+        <section>
+            <article className='TarjetaDeEventoDos__Container'>
+                <div className='TarjetaDeEventoDos__Row'>
+                    <div className='TarjetaDeEventoDos__Uno'>
+                        <h3>{text}</h3>
                     </div>
-                </div>
-                
-                <div className='TarjetaDeEventoDos__Tres'>
-                    <div className='TarjetaDeEventoDos__SpanGrid'>
-                        <div>{fecha}</div>
-                        <span>{hora}</span>
-                        <span>{modalidad}</span>
-                        <span>{lugar}</span>
+                    
+                    <div className='TarjetaDeEventoDos__Dos'>
+                        {text}
                     </div>
-                </div>
+                    
+                    <div className='TarjetaDeEventoDos__Tres'>
+                        {text}
+                    </div>
 
-                <div className='TarjetaDeEventoDos__Cuatro'>
-                    <div className='justify'>
-                        <p>
-                            {resumenCorto}
-                        </p>
-                        <strong                        
-                            onClick={() => setShow(true)}
-                        >
-                            más información
-                        </strong>
+                    <div className='TarjetaDeEventoDos__Cuatro'>
+                        <div className='justify'>
+                            <p>
+                                {text}
+                            </p>
+                            <strong>
+                                más información
+                            </strong>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <ModalEvento 
-                show={show} 
-                setShow={setShow} 
-                titulo={nombreDelEvento} 
-                contenido={resumenCompleto}
-            />
+            </article>
+            <NormalModal openNotif={openNotif} setOpenNotif={setOpenNotif} />
         </section>
     )
 }

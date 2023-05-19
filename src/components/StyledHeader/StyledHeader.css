@@ -1,4 +1,4 @@
-.ImagenBarraNavegacion {
+.StyledHeader {
   position: relative;
   background-image: url("https://picsum.photos/1300/900");
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@
   z-index: 0;
   color: white;
 }
-.ImagenBarraNavegacion::before {
+.StyledHeader::before {
   position: absolute;
   background: rgba(33, 37, 41, 0.7);
   content: "";
@@ -22,20 +22,20 @@
   width: 100%;
 }
 
-.ImagenBarraNavegacion h1,
+.StyledHeader h1,
 p,
 nav {
   z-index: 1;
 }
 
-.ImagenBarraNavegacion h1 {
+.StyledHeader h1 {
   margin-bottom: 24px;
   font-size: 50px;
   line-height: 1.3;
   font-weight: 300;
 }
 
-.ImagenBarraNavegacion nav {
+.StyledHeader nav {
   position: absolute;
   width: 1160px;
   bottom: 0;
@@ -44,12 +44,12 @@ nav {
   padding: 0 12px;
 }
 
-.ImagenBarraNavegacion__lista {
+.StyledHeader__lista {
   display: flex;
   list-style: none;
 }
 
-.ImagenBarraNavegacion__elementos {
+.StyledHeader__elementos {
   padding: 14px 40px;
   text-decoration: none;
   color: white;
@@ -58,12 +58,12 @@ nav {
   white-space: nowrap;
 }
 
-.ImagenBarraNavegacion__elementos.selected {
+.StyledHeader__elementos.selected {
   background: #094c8a;
 }
 
 @media screen and (max-width:1400px) {
-  .ImagenBarraNavegacion h1{
+  .StyledHeader h1{
     font-size: 40px;
     text-align: center;
   }
@@ -74,7 +74,7 @@ nav {
 
   
 
-  .ImagenBarraNavegacion nav {
+  .StyledHeader nav {
     display: none;
   }
 
