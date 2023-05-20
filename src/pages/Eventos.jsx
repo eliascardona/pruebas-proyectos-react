@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { firestore } from "../firebase/base"
 import { collection, onSnapshot } from "firebase/firestore"
-import TarjetaDeEventoDos from "../components/eventos/TarjetaDeEventoDos"
+import Evento from "../components/eventos/Evento"
 import StyledHeader from "../components/StyledHeader/StyledHeader"
 
 const FETCH_STATES = {
@@ -47,11 +47,11 @@ const Eventos = () => {
   }, [])
   return (
     <>
-      <StyledHeader h1={"Eventos"} p={"Fomentamos la innovación"}/>
+      <StyledHeader h1={"Eventos"} />
       {
-        dataClientes.information.map((info, i, arr) => {
+        dataClientes.information.map((info, i) => {
           return (
-            <TarjetaDeEventoDos {...info} />
+            <Evento {...info} key={i} />
           )
         })
       }

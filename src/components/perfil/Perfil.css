@@ -1,0 +1,102 @@
+.Container {
+    display: grid;
+}
+
+.Row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-self: center;
+}
+
+.a {
+    display: grid;
+    align-self: start;
+    max-width: 100%;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: .3em solid #000;
+}
+
+.a > div {
+    height: 3em;
+    line-height: 3em;
+    padding-left: 1em;
+    font-weight: bolder;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.mh3 {
+    margin: 0 0 0 4rem;
+}
+
+.b {
+    width: 70%;
+    display: grid;
+    justify-self: start;
+    margin-left: 4rem;
+    border: solid 1px #aaa;
+    border-radius: 1em;
+}
+
+.b > div {
+    max-height: 100%;
+    width: 100%;
+    display: grid;
+    place-self: center;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 50%;
+    place-items: center;
+    margin: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.b > div > div {
+    padding: .3em 0;
+}
+
+.bUno {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.bTres {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.ImgGrid {
+    box-sizing: content-box;
+}
+
+.ImgGrid > img {
+    height: 100px;
+    width: 100px;
+}
+
+.SpanGrid {
+    display: grid;
+    place-items: center;
+    row-gap: .4em;
+}
+
+.SpanGrid > div {
+    margin-top: .3em;
+    color: #164ab4;
+    font-size: 1.4em;
+    font-weight: bolder;
+}
+
+.justify {
+    text-align: justify;
+    padding: 0 1em 1em 1em;
+}
+
+@media (max-width: 668px) {
+	.Row {
+        grid-template-columns: 100%;
+        align-items: center;
+    }
+}

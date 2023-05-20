@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
 import { auth } from "../firebase/base"
 import { signInWithEmailAndPassword } from "firebase/auth"
+import "../gStyles.css"
 
 const Login = () => {
   const emailRef = useRef()
@@ -13,6 +14,7 @@ const Login = () => {
       const email = emailRef.current.value
       const password = passwordRef.current.value
       await signInWithEmailAndPassword(auth, email, password)
+      window.location.reload()
     } catch(error) {
       let errorCode = error.code
       if (errorCode == "auth/wrong-password") {
@@ -20,35 +22,41 @@ const Login = () => {
       }
     }
   }
-
+  const accordionRef = useRef(null)
+  function showLogin() {
+    accordionRef.current.style.display="block"
+  }
+  
   return (
-    <>
-      <h2>Access</h2>
+    <div>
+      <div className="accordionTit" onClick={showLogin}>click to login</div>
+      <div style={{display:'none'}} ref={accordionRef}>
         <span>Email</span>
         <input
           type="email"
           ref={emailRef}
           placeholder="hello@email.com"
-          // className={styles.input}
+          className="input"
         />
         <span>Password</span>
         <input
           type="password"
           ref={passwordRef}
           placeholder="thePassIs12356"
-          // className={styles.input}
+          className="input"
         />
         <button
           type="button"
           onClick={login}
-          // className={styles.formBtn}
+          className="formBtn"
         >
           Login
         </button>
         <small style={{color:'red'}}>
           {error}
         </small>
-    </>
+      </div>
+    </div>
   )
 }
 

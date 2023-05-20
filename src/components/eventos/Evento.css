@@ -1,9 +1,9 @@
-.TarjetaDeEventoDos__Container {
+.Evento__Container {
     display: grid;
     padding: 0 10vw;
 }
 
-.TarjetaDeEventoDos__Row {
+.Evento__Row {
     height: auto;
     display: grid;
     grid-auto-flow: dense;
@@ -14,21 +14,21 @@
     overflow: hidden;
 }
 
-.TarjetaDeEventoDos__ImgGrid {
+.Evento__ImgGrid {
     box-sizing: content-box;
 }
 
-.TarjetaDeEventoDos__ImgGrid > img {
+.Evento__ImgGrid > img {
     width: 90%;
 }
 
-.TarjetaDeEventoDos__SpanGrid {
+.Evento__SpanGrid {
     display: grid;
     place-items: center;
     row-gap: .4em;
 }
 
-.TarjetaDeEventoDos__SpanGrid > div {
+.Evento__SpanGrid > div {
     margin-top: .3em;
     color: #164ab4;
     font-size: 1.4em;
@@ -40,12 +40,12 @@
     padding: 0 1em 1em 1em;
 }
 
-.TarjetaDeEventoDos__Dos {
+.Evento__Dos {
     grid-column: 1;
     grid-row: 2;
 }
 
-.TarjetaDeEventoDos__Tres {
+.Evento__Tres {
     grid-column: 2;
     grid-row: 2;
     display: grid;
@@ -53,35 +53,35 @@
     justify-items: start;
 }
 
-.TarjetaDeEventoDos__Cuatro {
+.Evento__Cuatro {
     grid-column: 1;
     grid-row: 3;
 }
 
 @media (max-width: 668px) {
-	.TarjetaDeEventoDos__Row {
+	.Evento__Row {
         grid-template-columns: 100%;
         align-items: center;
     }
-    .TarjetaDeEventoDos__Dos {
+    .Evento__Dos {
         grid-column: initial;
         grid-row: initial;
     }
     
-    .TarjetaDeEventoDos__Tres {
+    .Evento__Tres {
         grid-column: initial;
         grid-row: initial;
         justify-items: center;
     }
     
-    .TarjetaDeEventoDos__Cuatro {
+    .Evento__Cuatro {
         grid-column: initial;
         grid-row: initial;
     }
 }
 
 @media (min-width:1296px) {
-    .TarjetaDeEventoDos__Container {
+    .Evento__Container {
         padding: 0 17vw;
     }   
 }

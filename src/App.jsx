@@ -4,29 +4,31 @@ import { ClaimsContext } from "./contexts/ClaimsContext"
 import Perfil from "./pages/Perfil"
 import Eventos from "./pages/Eventos"
 import Login from "./pages/Login"
-import "./App.css"
 
 function App () {
+	let arr = []
 	const authData = useContext(AuthContext)
 	const userCurrentClaim = useContext(ClaimsContext)
+	const authCurrentUser = authData.user
 
-	let arr = []
-	arr.push(authData.user.email)
-	arr.push(userCurrentClaim)
-	
 	useEffect(() => {
+		if (authCurrentUser) {
+			arr.push(authCurrentUser.email)
+			arr.push(userCurrentClaim)
+		} else {
+			console.log('Nadie ha iniciado sesión')
+		}		
 		console.log(arr)
-	}, [userCurrentClaim])
+	}, [authCurrentUser, userCurrentClaim])
 	
 	return (
 		<section>
+			<Login />
 			{
-				userCurrentClaim === "cliente" ? (
-					<Perfil />
-				) : userCurrentClaim === "invitado" ? (
+				userCurrentClaim === 'cliente' ? (
 					<Eventos />
 				) : (
-					<Login />
+					<Perfil />
 				)
 			}
 		</section>

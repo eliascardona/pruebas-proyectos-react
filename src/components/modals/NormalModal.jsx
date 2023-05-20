@@ -1,5 +1,5 @@
 import React from 'react'
-import "./componentesMD.css"
+import "./modals.css"
 
 const NormalModal = ({ openNotif, setOpenNotif, parentText }) => {
     return (
@@ -7,9 +7,7 @@ const NormalModal = ({ openNotif, setOpenNotif, parentText }) => {
         <div className="globalContainer">
             <div className="modalContainer">                
 				<div className="centeredGrid">
-                    <h3>
-                        {parentText}
-                    </h3>
+                    <h4>Desde firebase, pasando por custom claims</h4>
                     <p>
                         {parentText}
                     </p>

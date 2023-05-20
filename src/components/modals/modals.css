@@ -59,6 +59,8 @@
 
 .fileInput {
     appearance: none;
+	content: none;
+	visibility: hidden;
 }
 
 .fileInput::-webkit-file-upload-button {
